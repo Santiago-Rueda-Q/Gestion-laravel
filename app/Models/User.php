@@ -8,11 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use App\Models\Models\DocumentType;
-use App\Models\Models\UserType;
-use App\Models\Models\Institution;
-use App\Models\Models\AcademicProgram;
-use App\Models\Models\Gender;
+use App\Models\DocumentType;
+use App\Models\UserType;
+use App\Models\Institution;
+use App\Models\AcademicProgram;
+use App\Models\Gender;
 
 class User extends Authenticatable
 {
