@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserTypeController;
 use App\Http\Controllers\InstitutionController;
+use App\Http\Controllers\GenderController;
+use App\Http\Controllers\DocumentTypeController;
+use App\Http\Controllers\AcademicProgramController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -42,3 +45,10 @@ Route::apiResource('institutions', InstitutionController::class);
 Route::get('institutions-select', [InstitutionController::class, 'getAllForSelect']);
 Route::get('institutions/country/{country}', [InstitutionController::class, 'getByCountry']);
 Route::get('institutions-stats', [InstitutionController::class, 'getStats']);
+
+Route::apiResource('genders', GenderController::class);
+
+Route::apiResource('document-types', DocumentTypeController::class);
+
+Route::apiResource('academic-programs', AcademicProgramController::class);
+Route::get('academic-programs/institution/{institutionId}', [AcademicProgramController::class, 'getByInstitution']);
