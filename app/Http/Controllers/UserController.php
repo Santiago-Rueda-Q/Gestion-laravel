@@ -95,7 +95,7 @@ class UserController extends Controller
         try {
             $data = [
                 'document_types' => DocumentType::select('id', 'name')->get(),
-                'user_types' => UserType::select('id', 'name')->get(),
+                'user_types' => UserType::select('id', 'type')->get(),
                 'institutions' => Institution::select('id', 'name')->get(),
                 'academic_programs' => AcademicProgram::select('id', 'name', 'institution_id')->get(),
                 'genders' => Gender::select('id', 'name')->get(),

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserTypeController;
+use App\Http\Controllers\InstitutionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,3 +34,11 @@ Route::prefix('users')->group(function () {
     Route::delete('/{id}', [UserController::class, 'destroy']);
     Route::patch('/{id}/toggle-status', [UserController::class, 'toggleStatus']);
 });
+
+Route::apiResource('user-types', UserTypeController::class);
+Route::get('user-types-select', [UserTypeController::class, 'getAllForSelect']);
+
+Route::apiResource('institutions', InstitutionController::class);
+Route::get('institutions-select', [InstitutionController::class, 'getAllForSelect']);
+Route::get('institutions/country/{country}', [InstitutionController::class, 'getByCountry']);
+Route::get('institutions-stats', [InstitutionController::class, 'getStats']);
